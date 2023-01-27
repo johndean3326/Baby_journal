@@ -14,6 +14,10 @@ Baby.init(
         date:{
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        baby_name:{
+            type: DataTypes.STRING, 
+            allowNull: false, 
         }, 
         title:{
             type: DataTypes.STRING, 
@@ -24,6 +28,20 @@ Baby.init(
             type: DataTypes.STRING, 
             allowNull: true, 
         }, 
+        birthday:{
+            type: DataTypes.DATE, 
+            allowNull: false, 
+        },
+        first_word:{
+            type: DataTypes.STRING, 
+            allowNull: true, 
+        }, 
+        eye_color:{
+            type: DataTypes.STRING, 
+            allowNull: true, 
+        },
+        
+
         sequelize,
     timestamps: true,
     freezeTableName: true,
