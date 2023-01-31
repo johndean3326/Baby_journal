@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Baby extends Model{}
+class Parents extends Model{}
 
-Baby.init(
+Parents.init(
     {
         id:{
             type: DataTypes.INTEGER, 
@@ -12,44 +12,43 @@ Baby.init(
             autoIncrement: true,
         }, 
         date:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.DATE,
             allowNull: false,
-        },
-        baby_name:{
-            type: DataTypes.STRING, 
-            allowNull: false, 
         }, 
         title:{
             type: DataTypes.STRING, 
             allowNull: false, 
             primaryKey: true, 
         }, 
-        milestone:{
+        parents_names:{
             type: DataTypes.STRING, 
-            allowNull: true, 
-        }, 
-        birthday:{
-            type: DataTypes.DATE, 
-            allowNull: false, 
+            allowNull: false,
         },
-        first_word:{
-            type: DataTypes.STRING, 
-            allowNull: true, 
-        }, 
-        eye_color:{
-            type: DataTypes.STRING, 
-            allowNull: true, 
+        father_age:{
+            type: DataTypes.INTEGER, 
+            allowNull: false,
         },
-        
+        mother_age:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        grandfather:{
+            type: DataTypes.STRING, 
+            allowNull: true
+        },
+        grandmother:{
+            type: DataTypes.STRING,
+            allowNull:true,
+        },
 
         sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'baby',
+    modelName: 'parents',
     }
 )
 
 
 
-module.exports = Baby;
+module.exports = Parents;
