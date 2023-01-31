@@ -1,7 +1,7 @@
 {
-  "name": "user-list",
+  "name": "babyjournal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Creating a Baby Journal",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "seed": "node seeds/seed.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Logan , John , Alec , Christian",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -20,5 +20,14 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johndean3326/Baby_journal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johndean3326/Baby_journal/issues"
+  },
+  "homepage": "https://github.com/johndean3326/Baby_journal#readme"
 }
