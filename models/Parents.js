@@ -13,16 +13,11 @@ Parents.init(
         }, 
         date:{
             type: DataTypes.DATE,
-            allowNull: false,
-        }, 
-        title:{
+            allowNull: true,
+        },  
+        parents_name:{
             type: DataTypes.STRING, 
-            allowNull: false, 
-            primaryKey: true, 
-        }, 
-        parents_names:{
-            type: DataTypes.STRING, 
-            allowNull: false,
+            allowNull: true,
         },
         father_age:{
             type: DataTypes.INTEGER, 
@@ -42,7 +37,6 @@ Parents.init(
         },
     },
     {
-
         sequelize,
     timestamps: true,
     freezeTableName: true,
