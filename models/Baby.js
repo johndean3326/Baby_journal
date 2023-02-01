@@ -40,14 +40,15 @@ Baby.init(
             type: DataTypes.STRING, 
             allowNull: true, 
         },
-        
-
+    },
+        {
         sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'baby',
-    }
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'baby',
+        },
+    
 )
 
 
