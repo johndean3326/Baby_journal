@@ -40,15 +40,14 @@ Parents.init(
             type: DataTypes.STRING,
             allowNull:true,
         },
-    },
-    {
-
+        {
         sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'parents',
-    }
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'parents',
+        },
+    
 )
 
 
