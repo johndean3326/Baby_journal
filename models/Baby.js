@@ -10,27 +10,18 @@ Baby.init(
             allowNull: false, 
             primaryKey: true, 
             autoIncrement: true,
-        }, 
-        date:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
         },
         baby_name:{
             type: DataTypes.STRING, 
             allowNull: false, 
-        }, 
-        title:{
-            type: DataTypes.STRING, 
-            allowNull: false, 
-            primaryKey: true, 
-        }, 
+        },  
         milestone:{
             type: DataTypes.STRING, 
             allowNull: true, 
         }, 
         birthday:{
-            type: DataTypes.DATE, 
-            allowNull: false, 
+            type: DataTypes.STRING, 
+            allowNull: true, 
         },
         first_word:{
             type: DataTypes.STRING, 
@@ -40,15 +31,16 @@ Baby.init(
             type: DataTypes.STRING, 
             allowNull: true, 
         },
-    },
         {
-        sequelize,
+
+        
         timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'baby',
-        },
-    
+        sequelize,
+        }
+
 )
 
 
