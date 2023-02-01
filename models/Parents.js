@@ -35,8 +35,9 @@ Parents.init(
             type: DataTypes.STRING,
             allowNull:true,
         },
-    }
+    },
         {
+        
         sequelize,
         timestamps: true,
         freezeTableName: true,

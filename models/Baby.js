@@ -31,17 +31,15 @@ Baby.init(
             type: DataTypes.STRING, 
             allowNull: true, 
         },
-    }
+    },
         {
-
-        
         timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'baby',
         sequelize,
         }
-
+    
 )
 
 
