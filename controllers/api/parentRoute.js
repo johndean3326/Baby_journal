@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     try {
       const parentsData = await Parents.findAll({
         attributes:[
-          'id', 'date', 'title', 'parents_names', 'father_age', 'mother_age', 'grandfather', 'grandmother'
+          'id', 'parents_name', 'father_age', 'mother_age'
         ]
       });
       res.status(200).json(parentsData);
@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const parentInfo = await Parents.create({
+            id: req.body.id,
             parents_name: req.body.parents_name, 
             father_age: req.body.father_age,
             mother_age: req.body.mother_age

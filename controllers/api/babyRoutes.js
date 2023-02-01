@@ -19,8 +19,9 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
       const babyData = await Baby.create({
+          id: req.body.id,
           baby_name: req.body.baby_name, 
-          // birthday: req.body.birthday,
+          birthday: req.body.birthday,
           eye_color: req.body.eye_color
       })
       res.status(200).json(babyData)
