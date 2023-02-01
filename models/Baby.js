@@ -31,6 +31,7 @@ Baby.init(
             type: DataTypes.STRING, 
             allowNull: true, 
         },
+    }
         {
 
         
