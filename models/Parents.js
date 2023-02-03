@@ -46,6 +46,7 @@ Parents.init(
 
     },
         {
+        
         sequelize,
         timestamps: true,
         freezeTableName: true,
