@@ -1,6 +1,6 @@
 <body>
 
-{{#each users as |user| }}
+{{!-- {{#each users as |user| }} --}}
 
 
 
@@ -141,7 +141,7 @@
   </div>
 </div>
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
 <div class = "flexbox" id = "flexbox">
   <div class ="content3" id="content3">
     <div class ="headers">
@@ -149,7 +149,9 @@
     </div>
     <div class ="list">
       <ul>
-        <li>Saved Note Example</li>
+        {{#each entries as |entry| }}
+        <li>{{{entry.entry}}} {{{entry.date}}}</li>
+        {{/each}}
       </ul>
    </div>
 
@@ -167,14 +169,15 @@
     </div>
   </div>
 
-  <div class ="content2" id ="conent2">
+  <div class ="content2" id ="content2">
     <div class ="headerM">
-      <h1>Medication:</h1>
+      <h1>Baby Info:</h1>
     </div>
-    <div class ="med">
-      <label for="medName">Medication: </label>
-      <input id="medName" type="text" placeholder="..."/>
-      <button>Submit</button>
+    <div class ="fam">
+      <p>Baby name: {{{baby.baby_name}}}</p>
+      <p>Birthday: {{{baby.birthday}}}</p>
+      <p>Eye Color: {{{baby.eye_color}}}</p>
+      <p>First Word: {{{baby.first_word}}}</p>
     
     </div>
 
