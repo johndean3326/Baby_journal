@@ -1,0 +1,21 @@
+[
+
+    {
+        "parents_name": "Mark",
+        "date": "2023-02-02",
+        "father_age": 27,
+        "mother_age": 24,
+        "user_id": 1
+
+    },
+    {
+        "parents_name": "Jessica",
+        "date": "2023-01-27",
+        "father_age": 31,
+        "mother_age": 29,
+        "user_id": 2
+
+    }
+    
+    
+]
