@@ -1,18 +1,29 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User , Baby, Journal, Parents } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const userData = await User.findOne({
+      where: {id: req.session.user_id},
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    const user = userData.get({plain: true})
+    const parentData = await Parents.findOne({where: {user_id: user.id}})
+    const babyData = await Baby.findOne({where: {parent_id: parentData.id}})
 
+    const journalData = await Journal.findAll({where: {baby_id: babyData.id}})
+    //const babyData = await Baby.findOne({where: {}})
+    const entries = journalData.map((project) => project.get({plain: true}))
+    
+
+    console.log(entries);
     res.render('homepage', {
-      users,
+      // users,
+
+      user: user, baby: babyData.get({plain: true}), entries: entries,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

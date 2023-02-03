@@ -1,13 +1,14 @@
 const router = require('express').Router();
-const { Baby, Parents } = require('../../models');
+const { Baby, Parents, User } = require('../../models');
 
 // Get all parent data
 router.get('/', async (req, res) => {
     try {
       const parentsData = await Parents.findAll({
-        attributes:[
-          'id', 'parents_name', 'father_age', 'mother_age'
-        ]
+        include: [{
+            model: User,
+            attributes: ["name", "email"]
+          }]
       });
       res.status(200).json(parentsData);
     } catch (err) {

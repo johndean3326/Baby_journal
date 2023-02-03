@@ -10,9 +10,11 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
+  <div class = "title">
     <h1>
       Baby Journal
     </h1>
+  </div>
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">Logout</button>
@@ -29,6 +31,17 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+
+  <style>
+    .title {
+      border: 4px solid black;
+      color: rgb(96, 205, 255);
+      background-color: rgb(136, 81, 130);
+      height: 55px;
+      text-align: center;
+    }
+  </style>
 </body>
 
 </html>

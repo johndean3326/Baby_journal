@@ -1,0 +1,29 @@
+[
+    
+        {
+            "entry": "That is an entry to the journal",
+            "date": "2023-02-07",
+            "baby_id": 1
+        },
+        {
+            "entry": "That is 2nd entry to the journal",
+            "date": "2023-02-07",
+            "baby_id": 1
+        },
+        {
+            "entry": "That is 3rd entry to the journal",
+            "date": "2023-02-07",
+            "baby_id": 1
+        },
+        {
+            "entry": "That is 4th entry to the journal",
+            "date": "2023-02-07",
+            "baby_id": 1
+        },
+        {
+            "entry": "That is 5th entry to the journal",
+            "date": "2023-02-07",
+            "baby_id": 1
+        }
+
+]

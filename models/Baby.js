@@ -20,8 +20,8 @@ Baby.init(
             allowNull: true, 
         }, 
         birthday:{
-            type: DataTypes.DATE, 
-            allowNull: true, 
+            type: DataTypes.DATEONLY, 
+            allowNull: false, 
         },
         first_word:{
             type: DataTypes.STRING, 
@@ -29,8 +29,15 @@ Baby.init(
         }, 
         eye_color:{
             type: DataTypes.STRING, 
-            allowNull: true, 
+            allowNull: false, 
         },
+        parent_id:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: "parents",
+                key: "id",
+            }
+        }
     },
         {
         timestamps: true,

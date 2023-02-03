@@ -12,12 +12,12 @@ Parents.init(
             autoIncrement: true,
         }, 
         date:{
-            type: DataTypes.DATE,
-            allowNull: true,
+            type: DataTypes. DATEONLY,
+            allowNull: false,
         },  
         parents_name:{
             type: DataTypes.STRING, 
-            allowNull: true,
+            allowNull: false,
         },
         father_age:{
             type: DataTypes.INTEGER, 
@@ -29,12 +29,21 @@ Parents.init(
         },
         grandfather:{
             type: DataTypes.STRING, 
-            allowNull: true
+            allowNull: true,
         },
         grandmother:{
             type: DataTypes.STRING,
             allowNull:true,
         },
+        user_id:{
+            type: DataTypes.INTEGER,
+            references:{
+                model: "parents",
+                key: "id"
+            }
+        },
+
+
     },
         {
         
