@@ -35,18 +35,10 @@ Parents.init(
             type: DataTypes.STRING,
             allowNull:true,
         },
-<<<<<<< HEAD
 
-
-    },
-
-        {
-
-=======
-    },
-        {
         
->>>>>>> 0f134c5a830728f2956b1b35eac9bc024caca3d0
+    },
+        {
         sequelize,
         timestamps: true,
         freezeTableName: true,
