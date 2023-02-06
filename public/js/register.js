@@ -7,7 +7,7 @@ const registerFormHandler = async (event) => {
     const confirmPass = document.querySelector('#password-conf-reg').value.trim();
 
     if (password != confirmPass) {
-        document.querySelector('#warning').textContent = "passwords dont match";
+        document.querySelector('#warning').textContent = "Passwords Don't Match";
     }
     else {if (email && password) {
         

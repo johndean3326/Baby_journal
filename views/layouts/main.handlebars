@@ -6,16 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baby_db</title>
   <link rel="stylesheet" href="/css/jass.css">
+  <style>
+    .background{
+       border: 2px solid black;
+       border-radius: 10px ;
+    }
+    .button{
+      background-color: cornsilk;
+      border: 2px solid black;
+    }
+    .BabyJ{
+      background-color:#a6aeff;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
+  <header class="display-flex justify-space-between align-center p-2 background">
+    <h1 class="BabyJ">
       Baby Journal
     </h1>
     {{#if logged_in}}
     <nav>
-      <button class="btn" id="logout">Logout</button>
+      <button class="btn button " id="logout">Logout</button>
     </nav>
     {{/if}}
   </header>
