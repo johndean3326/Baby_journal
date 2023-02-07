@@ -8,10 +8,7 @@ const registerFormHandler = async (event) => {
     const grandmotherName = document.querySelector('#granda-name').value.trim();
     const user_id = document.querySelector("#user_id").getAttribute("username");
     const meeting = document.querySelector('#meeting-date').value.trim();
-
-
     
-        
         const response = await fetch('/api/parents', {
           method: 'POST',
           body: JSON.stringify({ 

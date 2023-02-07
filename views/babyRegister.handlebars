@@ -1,0 +1,39 @@
+<div class="container mt-4 background2">
+        <div class="card" style="width: 18rem;">            
+            <div class="card-header">Baby Register Form</div>    
+            <div class="card-body">
+
+                <form class="babyRegister-form">
+                    <div class="mb-3">
+                        <label for="baby name " class="form-label">Baby name</label>
+                        <input type="text" class="form-control" id="baby_name" name="name">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <input type="text" class="form-control" id="birthday" name="name">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="first word" class="form-label">First Word</label>
+                        <input type="text" class="form-control" id="first-word" name="email">                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="eye color" class="form-label">Eye Color</label>
+                        <input type="text" class="form-control" id="eye-color" name="password">
+                    </div>
+                    <p id = "user_id" username = {{user.id}}></p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+</div>
+<style>
+.background2{
+    background-color: darkgray;
+    width: 18rem;
+}
+body {
+    background-image: url("https://img.freepik.com/free-vector/flat-design-baby-shower-zoom-background_23-2149242840.jpg?w=2000");
+    background-position: center;
+     }
+</style>
+<script src="/js/babyRegister.js"></script>

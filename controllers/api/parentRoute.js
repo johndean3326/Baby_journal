@@ -20,9 +20,11 @@ router.post('/', async (req, res) => {
     try {
         const parentInfo = await Parents.create({
             id: req.body.id,
-            parents_name: req.body.parents_name, 
+            parents_name: req.body.parents_name,
+            date: req.body.date,
             father_age: req.body.father_age,
-            mother_age: req.body.mother_age
+            mother_age: req.body.mother_age,
+            user_id: req.body.user_id
         })
         res.status(200).json(parentInfo)
     } catch (err) {
