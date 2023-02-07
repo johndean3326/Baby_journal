@@ -11,7 +11,15 @@ router.get('/', withAuth, async (req, res) => {
     });
 
     const user = userData.get({plain: true})
-    const parentData = await Parents.findOne({where: {user_id: user.id}})
+    
+      const parentData = await Parents.findOne({where: {user_id: user.id}})
+      if (parentData == null) {
+        res.render("parentRegister", {user})
+      } else {
+
+      
+      
+    
     const babyData = await Baby.findOne({where: {parent_id: parentData.id}})
 
     const journalData = await Journal.findAll({where: {baby_id: babyData.id}})
@@ -19,13 +27,14 @@ router.get('/', withAuth, async (req, res) => {
     const entries = journalData.map((project) => project.get({plain: true}))
     
 
-    console.log(entries);
+    console.log(parentData);
     res.render('homepage', {
       // users,
 
       user: user, baby: babyData.get({plain: true}), entries: entries,
       logged_in: req.session.logged_in,
     });
+  }
   } catch (err) {
     res.status(500).json(err);
   }
