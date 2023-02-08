@@ -5,7 +5,7 @@ const { Baby, Parents, User, Journal} = require('../../models');
 router.get('/', async (req, res) => {
     try {
       const babyData = await Baby.findAll({
-        attributes: [ "id", "baby_name" , "birthday", "eye_color" ],
+        attributes: [ "id", "baby_name" , "birthday", "eye_color" , "parent_id" ],
         include: [{
           model: Parents,
           attributes: ["parents_name", "father_age", "date"],
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
     try {
       const babyData = await Baby.findAll({
         where: {id: req.params.id},
-        attributes: [ "id", "baby_name" , "birthday", "eye_color" ],
+        attributes: [ "id", "baby_name" , "birthday", "eye_color", "parent_id" ],
         include: [{
           model: Parents,
           attributes: ["parents_name", "father_age", "date"],
@@ -56,7 +56,8 @@ router.post('/', async (req, res) => {
           id: req.body.id,
           baby_name: req.body.baby_name, 
           birthday: req.body.birthday,
-          eye_color: req.body.eye_color
+          eye_color: req.body.eye_color,
+          parent_id: req.body.parent_id
       })
       res.status(200).json(babyData)
   } catch (err) {

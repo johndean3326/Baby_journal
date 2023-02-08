@@ -5,12 +5,15 @@ const registerFormHandler = async (event) => {
     const birthday = document.querySelector('#birthday').value.trim();
     const firstWord = document.querySelector('#first-word').value.trim();
     const eyeColor = document.querySelector('#eye-color').value.trim();
-    const user_id = document.querySelector("#user_id").getAttribute("username");
-    
+    //const user_id = document.querySelector("#user_id").getAttribute("username");
+    const parent_id = document.querySelector("#parent_id").getAttribute("parent");
+
+    console.log(parent_id);
+
         const response = await fetch('/api/baby', {
           method: 'POST',
           body: JSON.stringify({ 
-            baby_name: babyName, birthday: birthday, first_word: firstWord, eye_color: eyeColor, user_id: user_id}),
+            baby_name: babyName, birthday: birthday, first_word: firstWord, eye_color: eyeColor, parent_id: parent_id}),
           headers: { 'Content-Type': 'application/json' },
         });
     

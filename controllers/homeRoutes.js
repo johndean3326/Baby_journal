@@ -18,6 +18,7 @@ router.get('/', withAuth, async (req, res) => {
       } else { 
         const babyData = await Baby.findOne({where: {parent_id: parentData.id}})
         if (babyData == null) {
+          console.log(parentData.id);
           res.render("babyRegister", {parent: parentData.id})
         } else {
         const journalData = await Journal.findAll({where: {baby_id: babyData.id}})
