@@ -15,28 +15,25 @@ router.get('/', withAuth, async (req, res) => {
       const parentData = await Parents.findOne({where: {user_id: user.id}})
       if (parentData == null) {
         res.render("parentRegister", {user})
-      } else {
+      } else { 
+        const babyData = await Baby.findOne({where: {parent_id: parentData.id}})
+        if (babyData == null) {
+          console.log(parentData.id);
+          res.render("babyRegister", {parent: parentData.id})
+        } else {
+        const journalData = await Journal.findAll({where: {baby_id: babyData.id}})
+        //const babyData = await Baby.findOne({where: {}})
+        const entries = journalData.map((project) => project.get({plain: true}))
+        res.render('homepage', {
+        // users,
 
-      
-      
-    
-    const babyData = await Baby.findOne({where: {parent_id: parentData.id}})
-
-    const journalData = await Journal.findAll({where: {baby_id: babyData.id}})
-    //const babyData = await Baby.findOne({where: {}})
-    const entries = journalData.map((project) => project.get({plain: true}))
-    
-
-    console.log(parentData);
-    res.render('homepage', {
-      // users,
-
-      user: user, baby: babyData.get({plain: true}), entries: entries,
-      logged_in: req.session.logged_in,
-    });
-  }
-  } catch (err) {
-    res.status(500).json(err);
+        user: user, baby: babyData.get({plain: true}), entries: entries,
+        logged_in: req.session.logged_in,
+      });
+     }
+    }
+    } catch (err) {
+        res.status(500).json(err);
   }
 });
 
